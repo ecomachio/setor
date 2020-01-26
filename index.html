@@ -17,10 +17,16 @@
       margin: 0
     }
 
+    @font-face {
+      font-family: conthraxsb;
+      src: url('./conthrax-sb.ttf');
+      font-weight: bold;
+    }
+
     body {
-      background-color: #0a6645;
+      background-image: linear-gradient(to right, #0a6345, #084b45);
       color: #ffffff;
-      font-family: "Conthrax Sb";
+      font-family: Arial, Helvetica, sans-serif;
       padding: 0 2vw;
       overflow-x: hidden;
     }
@@ -38,6 +44,7 @@
       margin: 0px;
       list-style: none;
       color: #fff;
+      font-family: "conthraxsb";
     }
 
     .menu ul li {
@@ -64,6 +71,10 @@
     .sublogo img {
       max-width: 10vw;
       height: auto;
+    }
+
+    .title {
+      font-family: "conthraxsb";
     }
 
     .main {
@@ -96,6 +107,7 @@
 
     .partners {
       display: flex;
+      border-bottom: 1px solid #82b7a9;
     }
 
     .partners .partnersText {
@@ -119,37 +131,59 @@
       width: 40%;
       min-width: 40%;
     }
+
+    .services {
+      border-bottom: 1px solid #82b7a9;
+    }
+
+    .services .servicesTitle {
+      padding: 40px;
+    }
+
+    .services .servicesTitle h1 {
+      padding: 40px 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #226c58;
+    }
+
+    .contact {
+      margin: 40px 0 200px 0;
+    }
+
+    .contact .contactTitle {
+      padding: 40px;
+    }
+
+    .contact .contactTitle h1 {
+      padding: 40px 0;
+    }
+
+    .footer {
+      position: relative;
+      padding: 40px 0;
+    }
+
+    .footer .logo img {
+      max-width: 15vw;
+      height: auto;
+      margin-left: 80%;
+    }
   </style>
-  <script>
-    var slideIndex = 1;
-    showSlides(slideIndex);
 
-    // Next/previous controls
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-
-    // Thumbnail image controls
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("dot");
-      if (n > slides.length) { slideIndex = 1 }
-      if (n < 1) { slideIndex = slides.length }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-    }
-  </script>
 </head>
 
 <body>
@@ -218,7 +252,7 @@
   <div class="partners">
     <div class="partnersText">
       <h1>Lorem ipsum dolor sit amet</h1>
-      <h2>Parceiros</h2>
+      <h2 class="title">Parceiros</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent gravida eleifend rhoncus. Maecenas eu
         dignissim quam, eu eleifend urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
         turpis egestas. Sed condimentum lorem ac risus faucibus aliquam. Cras ac condimentum neque. Pellentesque
@@ -228,7 +262,90 @@
 
     </div>
   </div>
+  <div class="services">
+    <div class="servicesTitle title">
+      <h1>Serviços</h1>
+      <table>
+        <tr>
+          <td>Mapeamento e Adequação de Processos Internos </td>
+        </tr>
+        <tr>
+          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </td>
+        </tr>
+        <tr>
+          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent gravida eleifend rhoncus. </td>
+        </tr>
+        <tr>
+          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent gravida eleifend rhoncus. </td>
+        </tr>
+        <tr>
+          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent gravida eleifend rhoncus. </td>
+        </tr>
+        <tr>
+          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent . </td>
+        </tr>
+        <tr>
+          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent gravida eleifend rhoncus. </td>
+        </tr>
+        <tr>
+          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent gravida eleifend rhoncus. </td>
+        </tr>
+        <tr>
+          <td>Lorem ipsum dolor sit amet, consectetur </td>
+        </tr>
+        <tr>
+          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent gravida eleifend rhoncus. </td>
+        </tr>
+        <tr>
+          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent gravida eleifend rhoncus. </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="contact">
+    <div class="contactTitle title">
+      <h1>Contato</h1>
 
+    </div>
+  </div>
+  <div class="footer">
+    <div class="logo">
+      <img src="logo.png" alt="">
+    </div>
+  </div>
+  <script>
+    var slideIndex = 1;
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+
+    (function () {
+      
+      showSlides(slideIndex);
+    })();    
+  </script>
 </body>
 
 </html>
