@@ -53,6 +53,12 @@
       font-size: 20px;
       line-height: 76px;
       text-align: center;
+      
+    }
+
+    .menu ul li a {
+      text-decoration: none;
+      color: white;
     }
 
     .logo {
@@ -193,10 +199,10 @@
     </div>
     <div class="menu">
       <ul>
-        <li>Empresa</li>
-        <li>Parceiros</li>
-        <li>Serviços</li>
-        <li>Contato</li>
+        <li><a href="#home">Empresa</a></li>
+        <li><a href="#partners">Parceiros</a></li>
+        <li><a href="#services">Serviços</a></li>
+        <li><a href="#contact">Contato</a></li>
       </ul>
     </div>
     <div class="sublogo">
@@ -204,7 +210,7 @@
     </div>
   </div>
 
-  <div class="main">
+  <div class="main" id="home">
     <div class="mainheader">
       <h1>The resize image property is used in responsive web</h1>
     </div>
@@ -249,7 +255,7 @@
       </p>
     </div>
   </div>
-  <div class="partners">
+  <div class="partners" id="partners">
     <div class="partnersText">
       <h1>Lorem ipsum dolor sit amet</h1>
       <h2 class="title">Parceiros</h2>
@@ -262,7 +268,7 @@
 
     </div>
   </div>
-  <div class="services">
+  <div class="services" id="services">
     <div class="servicesTitle title">
       <h1>Serviços</h1>
       <table>
@@ -302,7 +308,7 @@
       </table>
     </div>
   </div>
-  <div class="contact">
+  <div class="contact" id="contact">
     <div class="contactTitle title">
       <h1>Contato</h1>
 
@@ -342,9 +348,19 @@
     }
 
     (function () {
-      
+
       showSlides(slideIndex);
-    })();    
+    })();
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
   </script>
 </body>
 
